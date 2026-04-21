@@ -1,0 +1,40 @@
+services:
+  # Study Planner Agent
+  - type: web
+    name: studynet-planner
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python deploy/planner_server.py
+    envVars:
+      - key: AGENT_ID
+        value: studynet-planner
+      - key: GROQ_API_KEY
+        sync: false        # Set manually in Render dashboard
+      - key: PORT
+        value: 6000
+      - key: PUBLIC_URL
+        sync: false        # Auto-filled after first deploy: https://studynet-planner.onrender.com
+      - key: API_URL
+        sync: false        # Same as PUBLIC_URL
+      - key: IMPROVE_MESSAGES
+        value: "false"     # Disable NANDA message rewriting — our agents do their own processing
+
+  # Test/Teacher Agent
+  - type: web
+    name: studynet-tester
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python deploy/tester_server.py
+    envVars:
+      - key: AGENT_ID
+        value: studynet-tester
+      - key: GROQ_API_KEY
+        sync: false
+      - key: PORT
+        value: 6000
+      - key: PUBLIC_URL
+        sync: false        # https://studynet-tester.onrender.com
+      - key: API_URL
+        sync: false
+      - key: IMPROVE_MESSAGES
+        value: "false"

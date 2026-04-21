@@ -1,0 +1,63 @@
+{
+  "@context": "https://agentfacts.org/v1",
+  "id": "studynet-planner",
+  "agent_name": "StudyNet Study Planner",
+  "label": "Study Planner Agent",
+  "description": "An adaptive study planning agent that transforms any learning goal (vague or structured) into a personalized weekly plan with curated resources. Interviews users to clarify vague goals, searches for real learning resources, and adapts plans based on assessment results.",
+  "version": "1.0.0",
+  "provider": {
+    "name": "StudyNet",
+    "url": "",
+    "contact": ""
+  },
+  "endpoints": {
+    "primary": "",
+    "health": "/api/health",
+    "send": "/api/send",
+    "receive": "/api/receive_message"
+  },
+  "capabilities": {
+    "modalities": ["text"],
+    "languages": ["en"],
+    "streaming": false,
+    "auth": "none"
+  },
+  "skills": [
+    {
+      "name": "goal_clarification",
+      "description": "Interviews users to clarify vague learning goals before generating a plan",
+      "input": "Natural language learning goal (e.g. 'I want to learn cooking')",
+      "output": "Clarifying questions or a structured study plan"
+    },
+    {
+      "name": "plan_generation",
+      "description": "Generates a structured weekly study plan with topics and learning objectives",
+      "input": "Specific learning goal with timeframe",
+      "output": "Weekly plan with topics, objectives, and curated resources"
+    },
+    {
+      "name": "plan_adaptation",
+      "description": "Adapts the study plan based on assessment results from the Test/Teacher Agent",
+      "input": "Assessment results (verdict, scores, gaps)",
+      "output": "Updated study plan (advance / add resources / restructure)"
+    },
+    {
+      "name": "resource_search",
+      "description": "Searches YouTube and web for real learning resources per topic",
+      "input": "Topic name",
+      "output": "List of curated resources with titles and URLs"
+    }
+  ],
+  "agent_type": "study_planner",
+  "society": "StudyNet",
+  "interacts_with": ["studynet-tester"],
+  "message_protocol": "nanda_adapter",
+  "session_format": "[session:<id>] <message>",
+  "meta": {
+    "framework": "custom + groq",
+    "model": "qwen/qwen3-32b",
+    "created": "2026-04-21",
+    "project": "StudyNet - Personal Study Agent Network",
+    "course": "MIT NANDA Sandbox Project"
+  }
+}

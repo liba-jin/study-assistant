@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip install:*)",
+      "Read(//c/Users/jxzor/AppData/Local/Programs/**)",
+      "Read(//c/Program Files/**)",
+      "Bash(cmd.exe /c \"where python\")",
+      "Bash(cmd.exe /c \"py --version\")",
+      "Bash(cmd.exe /c \"python --version\")",
+      "Bash(cmd.exe /c \"py -3 --version\")",
+      "Bash(ls /d/Python*)",
+      "Bash(ls /c/Python*)",
+      "Read(//c/Users/jxzor/AppData/Local/**)",
+      "Bash(/c/Users/jxzor/AppData/Local/Python/bin/python.exe --version)",
+      "Bash(/c/Users/jxzor/AppData/Local/Python/bin/python.exe -m pip install -r requirements.txt)",
+      "Bash(/c/Users/jxzor/AppData/Local/Python/bin/python.exe -m pip install matplotlib requests)",
+      "Bash(/c/Users/jxzor/AppData/Local/Python/bin/python.exe -c ':*)",
+      "WebSearch",
+      "Bash(/c/Users/jxzor/AppData/Local/Python/bin/python.exe -m pip install google-genai)",
+      "WebFetch(domain:ai.google.dev)",
+      "Bash(/c/Users/jxzor/AppData/Local/Python/bin/python.exe -m pip install groq)",
+      "Bash(rm -f \"D:\\\\26Spring\\\\IIA\\\\state\\\\study.db\")",
+      "Bash(/c/Users/jxzor/AppData/Local/Python/bin/python.exe -c ' *)",
+      "WebFetch(domain:docs.google.com)",
+      "WebFetch(domain:nanda.media.mit.edu)",
+      "WebFetch(domain:projnanda.github.io)",
+      "WebFetch(domain:projectnanda.org)",
+      "WebFetch(domain:arxiv.org)",
+      "WebFetch(domain:github.com)",
+      "Bash(/c/Users/jxzor/AppData/Local/Python/bin/python.exe -m pip install nanda-adapter)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(/c/Users/jxzor/AppData/Local/Python/bin/python.exe -c \"import nanda_adapter; print\\(dir\\(nanda_adapter\\)\\)\")"
+    ]
+  }
+}

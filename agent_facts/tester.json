@@ -1,0 +1,63 @@
+{
+  "@context": "https://agentfacts.org/v1",
+  "id": "studynet-tester",
+  "agent_name": "StudyNet Test/Teacher",
+  "label": "Test & Teacher Agent",
+  "description": "An adaptive assessment agent that tests understanding of any topic through structured quiz questions (multiple choice, true/false, short answer). Tracks knowledge over time, identifies gaps, generates visual understanding maps, and returns mastery verdicts.",
+  "version": "1.0.0",
+  "provider": {
+    "name": "StudyNet",
+    "url": "",
+    "contact": ""
+  },
+  "endpoints": {
+    "primary": "",
+    "health": "/api/health",
+    "send": "/api/send",
+    "receive": "/api/receive_message"
+  },
+  "capabilities": {
+    "modalities": ["text"],
+    "languages": ["en"],
+    "streaming": false,
+    "auth": "none"
+  },
+  "skills": [
+    {
+      "name": "adaptive_quiz",
+      "description": "Runs a structured 5-8 question quiz on any topic, one question at a time with immediate feedback",
+      "input": "Topic name",
+      "output": "Quiz questions with A/B/C/D options and feedback per answer"
+    },
+    {
+      "name": "knowledge_scoring",
+      "description": "Scores understanding per sub-topic (0.0-1.0) and maintains persistent knowledge model",
+      "input": "Quiz responses",
+      "output": "Sub-topic scores and knowledge model update"
+    },
+    {
+      "name": "gap_identification",
+      "description": "Identifies specific knowledge gaps and areas needing review",
+      "input": "Assessment conversation",
+      "output": "List of specific gaps with actionable feedback"
+    },
+    {
+      "name": "mastery_verdict",
+      "description": "Returns mastered / needs_review / not_ready verdict after assessment",
+      "input": "Completed assessment",
+      "output": "Verdict + scores + gaps + visualization path"
+    }
+  ],
+  "agent_type": "assessor",
+  "society": "StudyNet",
+  "interacts_with": ["studynet-planner"],
+  "message_protocol": "nanda_adapter",
+  "session_format": "[session:<id>][start] topic=<topic> OR [session:<id>] <answer>",
+  "meta": {
+    "framework": "custom + groq",
+    "model": "qwen/qwen3-32b",
+    "created": "2026-04-21",
+    "project": "StudyNet - Personal Study Agent Network",
+    "course": "MIT NANDA Sandbox Project"
+  }
+}
