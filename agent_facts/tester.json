@@ -7,14 +7,14 @@
   "version": "1.0.0",
   "provider": {
     "name": "StudyNet",
-    "url": "",
+    "url": "https://tester-yxtf.onrender.com",
     "contact": ""
   },
   "endpoints": {
-    "primary": "",
-    "health": "/api/health",
-    "send": "/api/send",
-    "receive": "/api/receive_message"
+    "primary": "https://tester-yxtf.onrender.com",
+    "health": "https://tester-yxtf.onrender.com/api/health",
+    "send": "https://tester-yxtf.onrender.com/api/send",
+    "receive": "https://tester-yxtf.onrender.com/api/receive_message"
   },
   "capabilities": {
     "modalities": ["text"],

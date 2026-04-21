@@ -7,14 +7,14 @@
   "version": "1.0.0",
   "provider": {
     "name": "StudyNet",
-    "url": "",
+    "url": "https://study-assistant-kjlw.onrender.com",
     "contact": ""
   },
   "endpoints": {
-    "primary": "",
-    "health": "/api/health",
-    "send": "/api/send",
-    "receive": "/api/receive_message"
+    "primary": "https://study-assistant-kjlw.onrender.com",
+    "health": "https://study-assistant-kjlw.onrender.com/api/health",
+    "send": "https://study-assistant-kjlw.onrender.com/api/send",
+    "receive": "https://study-assistant-kjlw.onrender.com/api/receive_message"
   },
   "capabilities": {
     "modalities": ["text"],

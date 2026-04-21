@@ -13,9 +13,9 @@ services:
       - key: PORT
         value: 6000
       - key: PUBLIC_URL
-        sync: false        # Auto-filled after first deploy: https://studynet-planner.onrender.com
+        value: "https://study-assistant-kjlw.onrender.com"
       - key: API_URL
-        sync: false        # Same as PUBLIC_URL
+        value: "https://study-assistant-kjlw.onrender.com"
       - key: IMPROVE_MESSAGES
         value: "false"     # Disable NANDA message rewriting — our agents do their own processing
 
@@ -33,8 +33,8 @@ services:
       - key: PORT
         value: 6000
       - key: PUBLIC_URL
-        sync: false        # https://studynet-tester.onrender.com
+        value: "https://tester-yxtf.onrender.com"
       - key: API_URL
-        sync: false
+        value: "https://tester-yxtf.onrender.com"
       - key: IMPROVE_MESSAGES
         value: "false"
