@@ -130,6 +130,7 @@ def _register():
 if __name__ == "__main__":
     port = int(os.getenv("PORT", "6000"))
     agent_id = os.getenv("AGENT_ID", "studynet-tester")
+    public_url = os.getenv("PUBLIC_URL", "https://tester-yxtf.onrender.com")
     print(f"Starting {agent_id} on port {port}")
     _register()
-    run_server(TesterA2AServer(), host="0.0.0.0", port=port)
+    run_server(TesterA2AServer(url=public_url), host="0.0.0.0", port=port)
